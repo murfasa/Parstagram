@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,6 +155,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OsA-hj-zdo">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="W3y-Al-AKx" userLabel="Logout">
+                            <connections>
+                                <action selector="onLogoutButton:" destination="tYb-Jr-KKf" id="Psl-nJ-NBf"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="YXG-q2-Uqb">
                             <connections>
                                 <segue destination="NgH-i2-ess" kind="presentation" id="Spc-Z7-WYL"/>
@@ -172,13 +177,13 @@
         <!--Camera View Controller-->
         <scene sceneID="5r3-3Y-O00">
             <objects>
-                <viewController id="NgH-i2-ess" customClass="CameraViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="NgH-i2-ess" customClass="CameraViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FfK-uK-MEV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="U1Q-Vl-xHO">
-                                <rect key="frame" x="19.5" y="50" width="375" height="400"/>
+                                <rect key="frame" x="19.5" y="94" width="375" height="400"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="ict-Ql-q3e"/>
@@ -189,7 +194,7 @@
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49g-Vm-T4E">
-                                <rect key="frame" x="157" y="504" width="100" height="31"/>
+                                <rect key="frame" x="157" y="548" width="100" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="e9c-XR-Trc"/>
                                 </constraints>
@@ -200,7 +205,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nks-nS-SOy">
-                                <rect key="frame" x="57" y="460" width="300" height="34"/>
+                                <rect key="frame" x="57" y="504" width="300" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Gkq-t1-gxk"/>
                                 </constraints>
@@ -219,6 +224,9 @@
                             <constraint firstItem="49g-Vm-T4E" firstAttribute="centerX" secondItem="FfK-uK-MEV" secondAttribute="centerX" id="ehu-a2-MW1"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="5ih-z2-roZ"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="commentField" destination="Nks-nS-SOy" id="n82-6c-bEU"/>
                         <outlet property="imageView" destination="U1Q-Vl-xHO" id="edY-HJ-VzR"/>
@@ -236,7 +244,7 @@
         <!--Navigation Controller-->
         <scene sceneID="uSb-WU-5d5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="CGX-Ju-8S6" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FeedNavigationController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="CGX-Ju-8S6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="ZgL-TF-6DS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XBq-cg-AgW">
